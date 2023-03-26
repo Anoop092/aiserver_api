@@ -18,16 +18,17 @@ app.use("/api/v1/dally", dallyRoutes);
 app.get("/", async (req, res) => {
   res.send("Hello from ai");
 });
-const startServer = async () => {
-  try {
-    await connectDb(process.env.MONGODB_URL);
-    // app.listen(8000, () => {
-    //   console.log("server started at port 8000");
-    // });
-  } catch (error) {
-    console.log(error);
-  }
-};
-startServer();
+// const startServer = async () => {
+//   try {
+//     await connectDb(process.env.MONGODB_URL);
+//     // app.listen(8000, () => {
+//     //   console.log("server started at port 8000");
+//     // });
+//   } catch (error) {
+//     console.log(error);
+//   }
+// };
+// startServer();
+await connectDb(process.env.MONGODB_URL);
 
 module.exports = app;
